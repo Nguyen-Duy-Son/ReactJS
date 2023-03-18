@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    /* background-color: rgb(67, 85, 78); */
+}
+.features{
+    padding-left: 22%;
+    padding-right: 22%;
+    position: relative;
+}
+.features>h1{
+    padding-bottom: 10px;
+}
+.features-list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    margin-top:25px;
+}
