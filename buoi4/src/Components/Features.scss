@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    /* background-color: rgb(67, 85, 78); */
+}
+$mobile-width: 600px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+    @media (max-width:#{$mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media ((min-width:#{$mobile-width}) and (max-width: #{$desktop-width - 1px})) {
+        @content;
+    }
+}
+.features{
+    padding-left: 22%;
+    padding-right: 22%;
+    text-align: center;
+    @include mobile {
+        padding: 25% 10% 5% 10%;
+    }
+    @include tablet {
+        padding-left: 10%;
+        padding-right: 10%;       
+    }
+}
+.features-list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top:25px;
+    align-items: center;
+    justify-content: space-between  ;
+}

@@ -1,0 +1,176 @@
+$mobile-width: 600px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+    @media (max-width:#{$mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media ((min-width:#{$mobile-width}) and (max-width: #{$desktop-width - 1px})) {
+        @content;
+    }
+}
+
+.Table {
+    padding: 0 250px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include mobile {
+        padding: 0;
+    }
+
+    @include tablet {
+        padding: 0;
+        
+    }
+}
+
+.Table_box {
+    justify-content: space-between;
+    height: 400px;
+    background: #9C69E2;
+    border-radius: 50px;
+    padding: 0 10px;
+    justify-content: center;
+    width: 100%;
+    @include mobile {
+        width: 100%;
+        height: 270px;
+        text-align: center!important;
+        
+    }
+
+    @include tablet {
+        width: 100%;
+        height: 300px;
+
+    }
+}
+
+.Table__content {
+    margin: 20px 20px;
+    width: 100%;
+
+    @include mobile {
+        margin: 0;
+    }
+
+    @include tablet {
+        margin: 0;
+
+    }
+
+    h3 {
+        text-align: left;
+        font-family: 'Helvetica';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 130%;
+        color: #fff;
+        margin-top: 3%;
+
+        @include mobile {
+            font-size: 20px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        @include tablet {
+            text-align: center;
+            margin-top: 3%;
+        }
+    }
+
+
+}
+
+.content_box {
+    align-items: center;
+    margin-top: 4%;
+    justify-content: space-between;
+
+    @include mobile {
+        margin: 0;
+        width: 100%;
+    }
+
+    @include tablet {
+        margin: 0;
+        width: 100%;
+    }
+
+    .box_content {
+        background-color: #fff;
+        box-shadow: 0px 20px 0px rgba(156, 105, 226, 0.3);
+        border-radius: 20px;
+        height: 220px;
+        padding: 20px 30px;
+        margin: 0 15px;
+
+        @include mobile {
+            margin: 0;
+            width: 100%;
+        }
+
+        @include tablet {
+            margin: 0 5px;
+            width: 100%;
+        }
+
+        .box_right {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            font-family: 'Avenir';
+            padding-left: 4%;
+
+            h4 {
+                font-weight: 900;
+                font-size: 18px;
+                line-height: 160%;
+                letter-spacing: 0.005em;
+                color: #212353;
+
+                @include mobile {
+                    width: 100%;
+                    font-size: 100%;
+                }
+            }
+
+            span {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 160%;
+                letter-spacing: 0.01em;
+                color: #9C69E2;
+
+                @include mobile {
+                    width: 100%;
+                    font-size: 100%;
+                }
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 17px;
+                line-height: 180%;
+                color: #4B5D68;
+                width: 100%;
+                @include mobile {
+                    font-size: 80%;
+                    padding: 0;
+                }
+
+                @include tablet {
+                    font-size: 80%;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

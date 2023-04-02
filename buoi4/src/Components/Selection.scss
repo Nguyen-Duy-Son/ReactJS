@@ -1,0 +1,135 @@
+$mobile-width: 600px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+    @media (max-width:#{$mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media ((min-width:#{$mobile-width}) and (max-width: #{$desktop-width - 1px})) {
+        @content;
+    }
+}
+
+.selection {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 10% 15% 15% 15%;
+    position: relative;
+    justify-content: space-between;
+    @include mobile {
+        padding: 0;
+        padding: 5% 5% 0 5%;
+        flex-wrap: wrap;
+        text-align: center;
+        width: 100%!important;
+    }
+
+    @include tablet {
+        padding: 5% 7% 0 7%;
+    }
+}
+
+.selection_box {
+    width: 24%;
+    text-align: left !important;
+    @include mobile {
+        width: 50%;
+    }
+    @include tablet {
+        width: 20%;
+    }
+
+    label {
+        font-size: 20px;
+        font-weight: 700;
+
+        @include mobile {
+            font-size: 80%;
+        }
+        @include tablet {
+            font-size: 100%;
+        }
+    }
+
+    &-top {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+
+        label {
+            padding-left: 15%;
+        }
+
+        .selection_box-img1 {
+            position: absolute;
+            width: 5%;
+            bottom: 0;
+        }
+
+        .selection_box-img2 {
+            position: absolute;
+            left: 5.5%;
+            bottom: 0;
+            width: 6%;
+        }
+    }
+
+    &-mid {
+        padding-top: 20%;
+
+        @include mobile {
+            padding-top: 10%;
+            padding-right: 15%;
+        }
+    }
+
+    &-img {
+        padding-top: 15%;
+
+        li>a {
+            @include mobile {
+                font-size: 75%;
+            }
+        }
+    }
+
+    &-image {
+        width: 100%;
+
+        @include mobile {
+            width: 70%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            padding-right: 10%;
+
+            @include mobile {
+                width: 100%;
+                height: 100%;
+
+            }
+        }
+    }
+}
+
+.selection_box-mid {
+    p {
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 180%;
+        letter-spacing: 0.01em;
+        color: #212353;
+
+        @include mobile {
+            font-size: 70%;
+        }
+    }
+}

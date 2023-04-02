@@ -1,0 +1,320 @@
+// .Header {
+//     position: relative;
+//     width: 60%;
+//     top: 48px;
+//     margin-left: 20%;
+//     margin-right: 20%;
+//     text-align: center !important;
+//     height: 700px;
+
+// }
+
+// .Header__top {
+//     position: absolute;
+//     width: 100%;
+//     height: 60px;
+//     top: 48px;
+
+//     &-anh {
+//         &-img1 {
+//             position: absolute;
+//             width: 18px;
+//             height: 18px;
+//             top: 17px;
+//         }
+
+//         &-img2 {
+//             position: absolute;
+//             width: 18px;
+//             height: 36px;
+//             left: 18px;
+//         }
+//     }
+
+//     &-signin {
+//         @extend .Header__headline-learnmore;
+//         top: 0px !important;
+//         height: 100% !important;
+//         right: 0;
+//         width: 130px !important;
+
+//         &-span {
+//             @extend .Header__headline-learnmore-span;
+//             text-align: center;
+//             top: 25% !important;
+//             height: 50%;
+//         }
+//     }
+
+// }
+
+// .Header__headline {
+//     &-h1 {
+//         position: absolute;
+//         width: 40%;
+//         height: 20%;
+//         top: 140px;
+//         font-family: 'Helvetica';
+//         font-style: normal;
+//         font-weight: 700;
+//         font-size: 60px;
+//         line-height: 110%;
+//         display: flex;
+//         align-items: center;
+//         color: #212353;
+//         text-align: left;
+//     }
+
+//     &-p {
+//         position: absolute;
+//         width: 38%;
+//         height: 20%;
+//         top: 330px;
+//         font-family: 'Avenir';
+//         font-style: normal;
+//         font-weight: 500;
+//         font-size: 18px;
+//         line-height: 160%;
+//         color: #4B5D68;
+//         text-align: left;
+//     }
+
+//     &-learnmore {
+//         position: absolute;
+//         width: 120px;
+//         height: 46px;
+//         top: 460px;
+//         background: #9C69E2;
+//         border-radius: 50px;
+//         text-align: left;
+
+//         &-span {
+//             position: absolute;
+//             width: 90px;
+//             height: 30px;
+//             left: 16px;
+//             top: 10px;
+//             text-align: center;
+//             font-family: 'Avenir';
+//             font-style: normal;
+//             font-weight: 600;
+//             font-size: 16px;
+//             color: #1a1717;
+//         }
+//     }
+
+//     &-learnmore:hover {
+//         background: #58afcf;
+//         cursor: pointer;
+//     }
+// }
+
+// .Header__img {
+//     position: absolute;
+//     width: 60%;
+//     height: 55%;
+//     top: 150.22px;
+//     right: 0;
+// }
+
+// @media screen and (max-width:479px) {
+//     .Header {
+//         width: 90%;
+//         margin-left: 5%;
+//         margin-right: 5%;
+//         text-align: center;
+//         height: 200px !important;
+
+//     }
+//     .Header__top {
+//         height: 20px;
+//         &-anh {
+//             &-img1 {
+//                 width: 8px;
+//                 height: 8px;
+//                 top: 17px;
+//             }
+
+//             &-img2 {
+//                 width: 18px;
+//                 height: 36px;
+//                 left: 18px;
+//             }
+//         }
+
+//         &-signin {
+//             height: 40px!important;
+//             &-span {
+//                 text-align: center;
+//                 top: 15% !important;
+//                 height: 50%;
+//             }
+//         }
+//     }
+// }
+// @media screen and (min-width:480px) and (max-width:950px){
+
+// }
+$mobile-width: 600px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+    @media (max-width:#{$mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media ((min-width:#{$mobile-width}) and (max-width: #{$desktop-width - 1px})) {
+        @content;
+    }
+}
+
+.Header {
+    margin: 10% 0 120px 0;
+    padding: 0 250px;
+    position: relative;
+    height: 450px;
+
+
+    @include mobile {
+        width: 100%;
+        padding: 0 2%;
+    }
+
+    @include tablet {
+        padding: 0 50px !important;
+        margin-bottom: 64px;
+    }
+}
+
+.Header__top {
+    position: relative;
+
+    .Header__top-logo {
+        display: flex;
+        &-img1{
+            position: absolute;
+            width: 1.9%;
+            bottom: 0;
+        }
+        &-img2 {
+            position: absolute;  
+            left: 2.4%;    
+            bottom: 0;
+            width: 2%;
+        }
+    }
+
+    &-signin {
+        width: 110px;
+        height: 40px;
+        font-family: 'Avenir';
+        font-size: 18px;
+        line-height: 160%;
+        cursor: pointer;
+        text-align: center;
+        color: #fff;
+        background-color: #9c69e2;
+        padding-top: 5px;
+        margin-top: 30px;
+    }
+}
+
+.content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @include mobile {
+        margin-top: 100px !important;
+        width: 100%;
+        display: block;
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 60%;
+        justify-content: space-around;
+
+        @include mobile {
+            width: 100% !important;
+        }
+
+        .content-h1 {
+            font-family: 'Helvetica';
+            font-style: normal;
+            font-weight: 700;
+            width: 100%;
+            font-size: 65px;
+
+            @include mobile {
+                width: 100% !important;
+                font-size: 30px !important;
+            }
+
+            @include tablet {
+                width: 100% !important;
+                font-size: 30px !important;
+            }
+        }
+
+        .content-p {
+            font-family: 'Avenir';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 160%;
+            width: 65%;
+            margin-top: 30px;
+
+            @include mobile {
+                width: 100% !important;
+                font-size: 18px !important;
+            }
+
+            @include tablet {
+                width: 70% !important;
+                ;
+                font-size: 18px !important;
+            }
+        }
+    }
+
+    &__right {
+        width: 60%;
+        position: absolute;
+        left: 40%;
+        top: 80px;
+
+        @include mobile {
+            width: 100% !important;
+            top: 100%;
+            left: 0;
+        }
+
+        @include tablet {
+            width: 50% !important;
+            height: 50%;
+            left: 50%;
+            padding-bottom: 10%;
+        }
+    }
+}
+
+.content-learnmore {
+    width: 110px;
+    height: 40px;
+    font-family: 'Avenir';
+    font-size: 18px;
+    line-height: 160%;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: #9c69e2;
+    padding-top: 5px;
+    margin-top: 30px;
+}
