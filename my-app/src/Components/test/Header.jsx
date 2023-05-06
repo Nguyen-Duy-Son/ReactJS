@@ -10,9 +10,9 @@ const Header = () => {
   };
   return (
     <div className="header" onClick={handliClick}>
-      {/* <Link to={"/"}>Home</Link>
+      <Link to={"/"}>Home</Link>
       <Link to={"/about"}>About</Link>
-      <Link to={"/content"}>Content</Link> */}
+      <Link to={"/content"}>Content</Link>
       {/*NavLink dungf được active */}
       {/* <NavLink to={"/"}>Home</NavLink>
       <NavLink to={"/about"}>About</NavLink>
