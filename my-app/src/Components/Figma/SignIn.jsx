@@ -18,13 +18,15 @@ const SignIn = () => {
       axios
         .post("https://test-react.agiletech.vn/auth/login", values)
         .then((res) => {
-          if (res.status === 201) {
-            const accessToken = res.data.access_token;
-            localStorage.setItem("accessToken", accessToken);
+          if (res.status === 201 && !res.data.code) {
+            console.log(res.data.code);
+            // const accessToken = res.data.access_token;
+            // localStorage.setItem("accessToken", accessToken);
             // console.log(res.data.username);
             alert("Login success");
             navigate("/Home-SignIn");
           } else {
+            console.log(res.data.code);
             alert("Login failed");
             navigate("/");
           }
@@ -34,7 +36,6 @@ const SignIn = () => {
           alert("Login failed");
           navigate("/");
         });
-      localStorage.removeItem("accessToken");
     },
   });
 
