@@ -2,16 +2,33 @@ import React from "react";
 import "../../css/Home.scss";
 import { useNavigate } from "react-router-dom";
 import img from "../../Anh/imgfigma.png";
-const Banner = () => {
+const Header = () => {
   const navigate = useNavigate();
-  const handleClick = () => {
-    navigate('/SignIn')
+  const storage = localStorage;
+  const handleClickSignIn = () => {
+    navigate("/SignIn");
+  };
+  const handleClickProfile = () => {
+    navigate("/Profile");
+  };
+
+  const handleClickLogout = () => {
+    navigate("/Home-NotSignIn");
   };
   return (
     <div className="Header">
       <div className="Header__top flex justify-between">
-        <div className="Header__top-signin rounded-3xl" onClick={handleClick}>
+        <div
+          className="Header__top-signin rounded-3xl"
+          onClick={handleClickSignIn}
+        >
           Sign In
+        </div>
+        <div
+          className="Header__top-signin rounded-3xl"
+          onClick={handleClickProfile}
+        >
+          Profile
         </div>
       </div>
       <div className="content">
@@ -29,4 +46,4 @@ const Banner = () => {
     </div>
   );
 };
-export default Banner;
+export default Header;
