@@ -4,16 +4,21 @@ import { useNavigate } from "react-router-dom";
 import img from '../../Anh/imgfigma.png'
 const HomeSignIn = () => {
   const navigate = useNavigate();
-  const handleClick = () => {
+  const storage = localStorage;
+  const handleClickHomeNotSignIn = () => {
+    storage.removeItem("accessToken");
     navigate("/Home-NotSignIn");
+  };
+  const handleClickProfile = () => {
+    navigate("/Profile");
   };
   return (
     <div className="Header">
       <div className="Header__top flex justify-between">
-        <div className="Header__top-signin rounded-3xl" onClick={handleClick}>
+        <div className="Header__top-signin rounded-3xl" onClick={handleClickHomeNotSignIn}>
           Log Out
         </div>
-        <div className="Header__top-signin rounded-3xl">Profile</div>
+        <button className="Header__top-signin rounded-3xl" onClick={handleClickProfile}>Profile</button>
       </div>
       <div className="content">
         <div className="content__left">

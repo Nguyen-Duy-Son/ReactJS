@@ -6,11 +6,9 @@ import "./App.css";
 // import staticData from "./Child/mock.json";
 // import Header from "./Components/Header/Header"
 import { Routes, Route } from "react-router-dom";
-import HomeNotSignIn from "./Components/Figma/HomeNotSignIn";
+import Home from "./Components/Figma/HomeNotSignIn";
 import HomeSignIn from "./Components/Figma/HomeSignIn";
 import SignIn from "./Components/Figma/SignIn";
-import Home from "./Components/Figma/Home";
-import Header from "./Components/Header/Header";
 import Profile from "./Components/Figma/Profile";
 function App() {
   // const { UserContext } = store;
@@ -29,17 +27,11 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Header></Header>}></Route>
-      <Route
-        path="/Home-NotSignIn"
-        element={<HomeNotSignIn></HomeNotSignIn>}
-      ></Route>
-      <Route
-        path="/Home-NotSignIn"
-        element={<Profile></Profile>}
-      ></Route>
-      <Route path="/SignIn" element={<SignIn></SignIn>}></Route>
-      <Route path="/Home-SignIn" element={<HomeSignIn></HomeSignIn>}></Route>
+      <Route path="/" element={<Home />} />
+      <Route path="/Signin" element={<SignIn />} />
+      <Route path="/Home-SignIn" element={<HomeSignIn />} />
+      <Route path="/Profile" element={<Profile />} />
+      <Route path="/Home" element={<Home/>}/>
     </Routes>
   );
 }

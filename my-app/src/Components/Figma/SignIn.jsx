@@ -19,18 +19,16 @@ const SignIn = () => {
         .post("https://test-react.agiletech.vn/auth/login", values)
         .then((res) => {
           if (res.status === 201 && !res.data.code) {
-             const accessToken = res.data.access_token;
-             localStorage.setItem("accessToken", accessToken);
+            const accessToken = res.data.access_token;
+            localStorage.setItem("accessToken", accessToken);
             alert("Login success");
             navigate("/Home-SignIn");
           } else {
-            console.log(res.data.code);
             alert("Login failed");
             navigate("/");
           }
         })
         .catch((err) => {
-          console.log(err);
           alert("Login failed");
           navigate("/");
         });
